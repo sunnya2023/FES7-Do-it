@@ -17,6 +17,7 @@ img {
 }
 
 button {
+    font: inherit;
     border: none;
     background: none;
 }
@@ -79,8 +80,9 @@ main {
 }
 
 .section1 {
-    background-color: slateblue;
+    background-color: #fff;
     display: grid;
+    padding: 30px 27px;
     grid-area: section1;
 }
 
@@ -96,9 +98,14 @@ main {
     grid-area: section3;
 }
 
-.cola-list {}
+.cola-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
 
 .btn-cola {
+    width: 100%;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.50);
@@ -122,13 +129,41 @@ main {
     font-size: 12px;
     background-color: #6327FE;
     color: #fff;
-    padding: 5px 16px;
-    border-radius: 50px;
+    padding: 5px 0;
+    border-radius: 30px;
 }
 
 .btn-cola.on {
     box-shadow: 0 0 0 4px #6327FE;
 }
 
+/* soldout button */
+.btn-cola:disabled {
+    color: inherit;
+    position: relative;
+}
 
-.btn-cola:disabled {}
+.btn-cola:disabled::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.soldout {
+    color: #EAE8FE;
+    font-size: 14px;
+
+    z-index: 10;
+    border: 4px double #eae8fe;
+    position: absolute;
+    width: 45px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+}
