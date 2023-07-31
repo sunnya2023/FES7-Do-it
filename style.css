@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+button:enabled {
+    cursor: pointer;
+    font: inherit;
+}
+
+input {
+    font: inherit;
+}
+
+body {
+    background-color: #EAE8FE;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1 img {
+    max-width: 50%
+}
+
+.a11y-hidden {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+
+main {
+    width: 748px;
+    max-width: 100%;
+    margin: 67px auto;
+    display: grid;
+    gap: 20px 28px;
+
+    grid-template-areas:
+        "section1 section2"
+        "section1 section3";
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width:748px) {
+    main {
+        grid-template-areas:
+            "section1"
+            "section2"
+            "section3"
+        ;
+        grid-template-columns: 100%;
+        margin: 18px auto;
+    }
+}
+
+.section1 {
+    background-color: slateblue;
+    display: grid;
+    grid-area: section1;
+}
+
+.section2 {
+    background-color: salmon;
+    display: grid;
+    grid-area: section2;
+}
+
+.section3 {
+    background-color: royalblue;
+    display: grid;
+    grid-area: section3;
+}
+
+.cola-list {}
+
+.btn-cola {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.50);
+    padding: 11px 12px 9px;
+}
+
+.btn-cola img {
+    display: block;
+    width: 36px;
+    margin: 0 auto;
+}
+
+.cola-name {
+    display: block;
+    font-size: 9px;
+    margin: 6px 0;
+}
+
+.cola-price {
+    display: block;
+    font-size: 12px;
+    background-color: #6327FE;
+    color: #fff;
+    padding: 5px 16px;
+    border-radius: 50px;
+}
+
+.btn-cola.on {
+    box-shadow: 0 0 0 4px #6327FE;
+}
+
+
+.btn-cola:disabled {}
